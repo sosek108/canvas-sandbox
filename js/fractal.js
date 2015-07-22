@@ -4,7 +4,7 @@ $(document).ready(function() {
 	//settings 
 	var width = 1000;
 	var height = 500;
-    var startLength = 200;
+    var startLength = 150;
     var depth = 12;
 	var startpoint = {x: width/2, y: height};
 
