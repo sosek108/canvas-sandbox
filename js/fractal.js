@@ -43,8 +43,7 @@ function createEndpointByAngle(startpoint, length, angle) {
 function fractal (ctx, startpoint, depth, length, angle) {
     angle = (typeof angle !== 'undefined' ? angle : 0);
 
-    var phi = 1.61803398;
-    var proportion = 1/phi;
+    var proportion = 0.7;
     console.log(proportion);
 
 	if (depth < 1)
