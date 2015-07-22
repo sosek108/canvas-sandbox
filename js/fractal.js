@@ -13,7 +13,9 @@ $(document).ready(function() {
 	var canvasElement = document.getElementById('fractal-sandbox');
 	var context = canvasElement.getContext('2d');
 
-	fractal(context, startpoint, depth, startLength);
+    setTimeout(function(){
+        fractal(context, startpoint, depth, startLength);
+    }, 30)
 
 });
 
@@ -51,6 +53,8 @@ function fractal (ctx, startpoint, depth, length, angle) {
 	var endpoint = createEndpointByAngle(startpoint, length, angle);
 	drawLine(ctx, startpoint, endpoint);
 
-	fractal(ctx, endpoint, depth-1, proportion*length, angle+Math.PI/4);
-	fractal(ctx, endpoint, depth-1, proportion*length, angle-Math.PI/4);
+    setTimeout(function() {
+        fractal(ctx, endpoint, depth-1, proportion*length, angle+Math.PI/4);
+        fractal(ctx, endpoint, depth-1, proportion*length, angle-Math.PI/4);
+    }, 50);
 }
