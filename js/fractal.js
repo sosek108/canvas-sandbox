@@ -4,9 +4,10 @@ $(document).ready(function() {
 	//settings 
 	var width = 1000;
 	var height = 500;
-    var startLength = 150;
+    var startLength = 200;
     var depth = 12;
 	var startpoint = {x: width/2, y: height};
+
 
 	//get context
 	var canvasElement = document.getElementById('fractal-sandbox');
@@ -26,6 +27,7 @@ function drawLine (ctx, start, end) {
     ctx.shadowOffsetY = 0;
     ctx.shadowColor = 'black';
 	ctx.lineTo(end.x,end.y);
+    ctx.strokeStyle = 'red';
 	ctx.stroke();
 	return end;
 }
@@ -37,8 +39,11 @@ function createEndpointByAngle(startpoint, length, angle) {
 	}
 }
 function fractal (ctx, startpoint, depth, length, angle) {
-	depth = (typeof depth !== 'undefined' ? depth : 0);
     angle = (typeof angle !== 'undefined' ? angle : 0);
+
+    var phi = 1.61803398;
+    var proportion = 1/phi;
+    console.log(proportion);
 
 	if (depth < 1)
 		return;
@@ -46,6 +51,6 @@ function fractal (ctx, startpoint, depth, length, angle) {
 	var endpoint = createEndpointByAngle(startpoint, length, angle);
 	drawLine(ctx, startpoint, endpoint);
 
-	fractal(ctx, endpoint, depth-1, 0.7*length, angle+Math.PI/4);
-	fractal(ctx, endpoint, depth-1, 0.7*length, angle-Math.PI/4);
+	fractal(ctx, endpoint, depth-1, proportion*length, angle+Math.PI/4);
+	fractal(ctx, endpoint, depth-1, proportion*length, angle-Math.PI/4);
 }
