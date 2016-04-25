@@ -4,12 +4,15 @@
 	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
 	<script type="text/javascript" src="js/fractal.js"></script>
 	<script type="text/javascript" src="js/spiral.js"></script>
+	<script type="text/javascript" src="js/spiral2.js"></script>
+	<script type="text/javascript" src="js/spirals.js"></script>
 </head>
 <body>
 	<h1>Fractal tree</h1>
 	<canvas id="fractal-sandbox" width="1000px" height="500px" style="border:1px solid black;"></canvas>
 	<h1>Spiral</h1>
-	Fi:<input type="range" name="fi" id="fi" onchange="drawSpiral()" min="0" max="2" step="0.05"><br>
-	<canvas id="spiral-canvas" width="700" height="500"></canvas>
+	Fi:<input type="range" name="fi" id="fi" onchange="drawSpirals()" min="0" max="2" step="0.05"><br>
+	<canvas id="spiral-canvas1" width="700" height="500"></canvas>
+	<canvas id="spiral-canvas2" width="700" height="500"></canvas>
 </body>
 </html>

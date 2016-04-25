@@ -1,36 +1,4 @@
-$(document).ready(function() {
-	canvas = document.getElementById("spiral-canvas");
-    center = findCenter(canvas);
-    pi = Math.PI;
-    r = 1;
-    count = 1000;
-    spiral = new Spiral(center, canvas);
-    spiral.init();
-
-    fi = document.getElementById('fi').value = 0.7;
-    spiral.draw(r, fi*pi, count);
-});
-
-
-/**
- * x - width
- * y - height
- */
-function findCenter(canvas) {
-	return {
-		x: Math.floor(canvas.width /2),
-		y: Math.floor(canvas.height/2)
-	}
-}
-
-function drawSpiral() {
-	fi = document.getElementById('fi').value;
-
-    spiral.reset();
-    spiral.draw(r,fi*pi, count);
-}
-
-function Spiral(center, canvas) {
+function SpiralSum(center, canvas) {
 	return {
 		canvas: canvas,
 		ctx: undefined,
