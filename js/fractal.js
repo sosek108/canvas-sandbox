@@ -44,7 +44,6 @@ function fractal (ctx, startpoint, depth, length, angle) {
     angle = (typeof angle !== 'undefined' ? angle : 0);
 
     var proportion = 0.7;
-    console.log(proportion);
 
 	if (depth < 1)
 		return;
